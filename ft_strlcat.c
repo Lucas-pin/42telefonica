@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 16:18:51 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/22 17:32:02 by lpin             ###   ########.fr       */
+/*   Created: 2023/09/22 17:41:15 by lpin              #+#    #+#             */
+/*   Updated: 2023/09/22 17:53:40 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
-}
+	size_t	dst_len;
+	size_t	src_len;
+	size_t	i;
 
-int	main(void)
-{
-	int	a;
-	int	b;
-
-	a = 31;
-	b = 32;
-	printf("isprint(%c) = %d\n", a, isprint(a));
-	printf("ft_isasccii(%c) = %d\n", a, ft_isprint(a));
-	printf("isprint(%c) = %d\n", b, isprint(b));
-	printf("ft_isprint(%c) = %d\n", b, ft_isprint(b));
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	i = 0;
+	if (dstsize > 0)
+	{
+		while (dst[i] != '\0')
+		{
+			/* code */
+		}
+		
+		while (src[i] != '\0' && i < dstsize - dst_len - 1)
+		{
+			dst[i] = src[i];
+			++i;
+		}
+		*dst = '\0';
+	}
+	
 }

@@ -6,12 +6,11 @@
 /*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 16:11:04 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/14 16:11:06 by lpin             ###   ########.fr       */
+/*   Updated: 2023/09/22 17:31:50 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
 int	ft_isascii(int c)
 {
