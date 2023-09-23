@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin <lpin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 12:10:50 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/22 17:21:26 by lpin             ###   ########.fr       */
+/*   Updated: 2023/09/23 21:29:18 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,37 +18,47 @@
 
 int		ft_isalpha(int c);
 /*
-//@brief Checks for an alphabetic character; in the standard "C" locale, it is equivalent to (isupper(c) || islower(c)). In some locales, there may be additional characters for which isalpha() is true—letters which are neither uppercase nor lowercase.
+//@brief Checks for an alphabetic character; in the standard "C" locale, 
+it is equivalent to (isupper(c) || islower(c)). In some locales, 
+there may be additional characters for which isalpha() is true—letters 
+which are neither uppercase nor lowercase.
 //@param c The character to be checked.
-//@return The value returned is nonzero if the character c falls into the tested class, and zero if not.
+//@return The value returned is nonzero if the character c falls into the 
+tested class, and zero if not.
 */
 
 int		ft_isdigit(int c);
 /*
 //@brief Checks for a digit (0 through 9).
 //@param c The character to be checked.
-//@return The value returned is nonzero if the character c falls into the tested class, and zero if not.
+//@return The value returned is nonzero if the character c falls into 
+the tested class, and zero if not.
 */
 
 int		ft_isalnum(int c);
 /*
-//@brief Checks for an alphanumeric character; it is equivalent to (isalpha(c) || isdigit(c)).
+//@brief Checks for an alphanumeric character; it is equivalent 
+to (isalpha(c) || isdigit(c)).
 //@param c The character to be checked.
-//@return The value returned is nonzero if the character c falls into the tested class, and zero if not.
+//@return The value returned is nonzero if the character c falls 
+into the tested class, and zero if not.
 */
 
 int		ft_isascii(int c);
 /*
-//@brief Checks whether c is a 7-bit unsigned char value that fits into the ASCII character set.
+//@brief Checks whether c is a 7-bit unsigned char value 
+that fits into the ASCII character set.
 //@param c The character to be checked.
-//@return The value returned is nonzero if the character c falls into the tested class, and zero if not.
+//@return The value returned is nonzero if the character c 
+falls into the tested class, and zero if not.
 */
 
 int		ft_isprint(int c);
 /*
 //@brief Checks for any printable character including space.
 //@param c The character to be checked.
-//@return The value returned is nonzero if the character c falls into the tested class, and zero if not.
+//@return The value returned is nonzero if the character c falls 
+into the tested class, and zero if not.
 */
 
 size_t	ft_strlen(const char *s);
@@ -60,7 +70,8 @@ size_t	ft_strlen(const char *s);
 
 void	*ft_memset(void *s, int c, size_t n);
 /*
-//@brief Writes len bytes of value c (converted to an unsigned char) to the string b.
+//@brief Writes len bytes of value c (converted to an unsigned char) 
+to the string b.
 //@param s The pointer to the string to be filled.
 //@param c The character to fill the string with.
 //@param n The number of bytes to be filled.
@@ -69,7 +80,9 @@ void	*ft_memset(void *s, int c, size_t n);
 
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 /*
-//@brief Copies n bytes from memory area src to memory area dst. If dst and src overlap, behavior is undefined. Applications in which dst and src might overlap should use memmove(3) instead.
+//@brief Copies n bytes from memory area src to memory area dst. 
+If dst and src overlap, behavior is undefined. Applications in 
+which dst and src might overlap should use memmove(3) instead.
 //@param dst The pointer to the destination string.
 //@param src The pointer to the source string.
 //@param n The number of bytes to be copied.
@@ -78,7 +91,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 
 void	ft_bzero(void *s, size_t n);
 /*
-//@brief Writes n zeroed bytes to the string s. If n is zero, bzero() does nothing.
+//@brief Writes n zeroed bytes to the string s. If n is zero, 
+bzero() does nothing.
 //@param s The pointer to the string to be zeroed.
 //@param n The number of bytes to be zeroed.
 //@return None.
@@ -86,7 +100,8 @@ void	ft_bzero(void *s, size_t n);
 
 void	*ft_memmove(void *dst, const void *src, size_t len);
 /*
-//@brief Copies len bytes from string src to string dst. The two strings may overlap; the copy is always done in a non-destructive manner.
+//@brief Copies len bytes from string src to string dst. 
+The two strings may overlap; the copy is always done in a non-destructive manner
 //@param dst The pointer to the destination string.
 //@param src The pointer to the source string.
 //@param len The number of bytes to be copied.
@@ -95,10 +110,22 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 /*
-//@brief Copies up to size - 1 characters from the NUL-terminated string src to dst, NUL-terminating the result.
+//@brief Copies up to size - 1 characters from the NUL-terminated 
+string src to dst, NUL-terminating the result.
 //@param dst The pointer to the destination string.
 //@param src The pointer to the source string.
 //@param dstsize The size of the destination string.
 //@return The length of the string src.
 */
+
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+/*
+//@brief Appends the NUL-terminated string src to the end of dst. 
+It will append at most size - strlen(dst) - 1 bytes, NUL-terminating the result.
+//@param dst The pointer to the destination string.
+//@param src The pointer to the source string.
+//@param dstsize The size of the destination string.
+//@return The length of the string src.
+*/
+
 #endif
