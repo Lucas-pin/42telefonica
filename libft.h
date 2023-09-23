@@ -6,7 +6,7 @@
 /*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 12:10:50 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/23 21:29:18 by lpin             ###   ########.fr       */
+/*   Updated: 2023/09/23 21:47:33 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,20 @@ It will append at most size - strlen(dst) - 1 bytes, NUL-terminating the result.
 //@param src The pointer to the source string.
 //@param dstsize The size of the destination string.
 //@return The length of the string src.
+*/
+
+int		ft_toupper(int c);
+/*
+//@brief Converts a lower-case letter to the corresponding upper-case letter.
+//@param c The character to be converted.
+//@return The converted character.
+*/
+
+int		ft_tolower(int c);
+/*
+//@brief Converts an upper-case letter to the corresponding lower-case letter.
+//@param c The character to be converted.
+//@return The converted character.
 */
 
 #endif
