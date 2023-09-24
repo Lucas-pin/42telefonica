@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin <lpin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 15:34:32 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/15 15:34:43 by lpin             ###   ########.fr       */
+/*   Updated: 2023/09/22 17:30:22 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -23,7 +22,7 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 
-int	main(void)
+/*int	main(void)
 {
 	size_t	n;
 	char	arr[5] = "aaa";
@@ -40,4 +39,4 @@ int	main(void)
 	bzero(pointer_1, n);
 	printf("Contenido posterior pointer %s\n", pointer);
 	printf("Contenido posterior pointer_1 %s\n", pointer_1);
-}
+}*/

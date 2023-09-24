@@ -6,12 +6,11 @@
 /*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 15:00:03 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/14 15:00:08 by lpin             ###   ########.fr       */
+/*   Updated: 2023/09/22 17:31:59 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {
