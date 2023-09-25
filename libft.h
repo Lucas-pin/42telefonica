@@ -6,11 +6,7 @@
 /*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 12:10:50 by lpin              #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2023/09/22 12:58:12 by lpin             ###   ########.fr       */
-=======
-/*   Updated: 2023/09/23 21:47:33 by lpin             ###   ########.fr       */
->>>>>>> e990886bf1931ea59d2afe479e71166a2cb1a22d
+/*   Updated: 2023/09/25 12:06:43 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +15,7 @@
 # include <stdio.h>
 # include <ctype.h>
 # include <string.h>
+# include <stdlib.h>
 
 int		ft_isalpha(int c);
 /*
@@ -144,6 +141,83 @@ int		ft_tolower(int c);
 //@brief Converts an upper-case letter to the corresponding lower-case letter.
 //@param c The character to be converted.
 //@return The converted character.
+*/
+
+char	*ft_strchr(const char *s, int c);
+/*
+//@brief Locates the first occurrence of c (converted to a char)
+in the string pointed to by s. The terminating null character is considered
+to be part of the string; therefore if c is `\0', the functions locate the
+terminating `\0'.
+//@param s The pointer to the string to be searched.
+//@param c The character to be searched.
+//@return The pointer to the located character, 
+or NULL if the character does not appear in the string.
+*/
+
+char	*ft_strrchr(const char *s, int c);
+/*
+//@brief Locates the last occurrence of c (converted to a char)
+in the string pointed to by s. The terminating null character is considered
+to be part of the string; therefore if c is `\0', the functions locate the
+terminating `\0'.
+//@param s The pointer to the string to be searched.
+//@param c The character to be searched.
+//@return The pointer to the located character,
+or NULL if the character does not appear in the string.
+*/
+
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+/*
+//@brief Compares the two strings s1 and s2. It returns an integer less than,
+equal to, or greater than zero if s1 is found, respectively, to be less than,
+to match, or be greater than s2.
+//@param s1 The pointer to the first string to be compared.
+//@param s2 The pointer to the second string to be compared.
+//@param n The maximum number of characters to be compared.
+//@return The difference between the first two differing characters
+(when interpreted as unsigned char values, they are compared).
+*/
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+/*
+//@brief Locates the first occurrence of the null-terminated string needle
+in the string haystack, where not more than len characters are searched.
+Characters that appear after a `\0' character are not searched.
+//@param haystack The pointer to the string to be searched.
+//@param needle The pointer to the string to be searched for.
+//@param len The maximum number of characters to be searched.
+//@return The pointer to the located character,
+or NULL if the character does not appear in the string.
+*/
+
+char	*ft_memchr(const void *s, int c, size_t n);
+/*
+//@brief Locates the first occurrence of c (converted to an unsigned char)
+in string s.
+//@param s The pointer to the string to be searched.
+//@param c The character to be searched.
+//@param n The maximum number of characters to be searched.
+//@return The pointer to the located character,
+or NULL if the character does not appear in the string.
+*/
+
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+/*
+//@brief Compares byte string s1 against byte string s2. Both strings are
+assumed to be n bytes long.
+//@param s1 The pointer to the first string to be compared.
+//@param s2 The pointer to the second string to be compared.
+//@param n The maximum number of characters to be compared.
+//@return The difference between the first two differing characters
+(when interpreted as unsigned char values, they are compared).
+*/
+
+int		ft_atoi(const char *str);
+/*
+//@brief Converts the initial portion of the string pointed to by str to int.
+//@param str The pointer to the string to be converted.
+//@return The converted value.
 */
 
 #endif

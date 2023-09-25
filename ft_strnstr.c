@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 23:30:22 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/25 00:01:49 by lpin             ###   ########.fr       */
+/*   Updated: 2023/09/25 12:06:01 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int	ret;
+	int		ret;
 	size_t	needle_len;
-	
+
 	needle_len = ft_strlen(needle);
 	if (*needle == '\0')
 		return ((char *)haystack);
