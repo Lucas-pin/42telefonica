@@ -6,7 +6,7 @@
 /*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 12:10:50 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/25 12:06:43 by lpin             ###   ########.fr       */
+/*   Updated: 2023/09/26 16:58:28 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -218,6 +218,46 @@ int		ft_atoi(const char *str);
 //@brief Converts the initial portion of the string pointed to by str to int.
 //@param str The pointer to the string to be converted.
 //@return The converted value.
+*/
+
+void	*ft_calloc(size_t count, size_t size);
+/*
+//@brief Allocates memory for an array of count elements of size bytes each
+and returns a pointer to the allocated memory. The memory is set to zero.
+If count or size is 0, then calloc() returns either NULL, or a unique pointer
+value that can later be successfully passed to free().
+//@param count The number of elements to be allocated.
+//@param size The size of elements to be allocated.
+//@return The pointer to the allocated memory.
+*/
+
+char	*ft_strdup(const char *s1);
+/*
+//@brief Allocates sufficient memory for a copy of the string s1, does the copy,
+and returns a pointer to it. The pointer may subsequently be used as an argument
+to the function free(3). If insufficient memory is available, NULL is returned
+and errno is set to ENOMEM.
+//@param s1 The pointer to the string to be copied.
+//@return The pointer to the allocated memory.
+*/
+
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+/*
+//@brief Allocates (with malloc(3)) and returns a substring from the string s.
+The substring begins at index start and is of maximum size len.
+//@param s The pointer to the string to be copied.
+//@param start The start index of the substring.
+//@param len The maximum size of the substring.
+//@return The pointer to the allocated memory.
+*/
+
+char	*ft_strjoin(char const *s1, char const *s2);
+/*
+//@brief Allocates (with malloc(3)) and returns a new string, which is the result
+of the concatenation of s1 and s2.
+//@param s1 The pointer to the first string to be concatenated.
+//@param s2 The pointer to the second string to be concatenated.
+//@return The pointer to the allocated memory.
 */
 
 #endif
