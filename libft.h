@@ -6,7 +6,7 @@
 /*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 12:10:50 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/26 16:58:28 by lpin             ###   ########.fr       */
+/*   Updated: 2023/09/28 14:11:16 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -257,6 +257,15 @@ char	*ft_strjoin(char const *s1, char const *s2);
 of the concatenation of s1 and s2.
 //@param s1 The pointer to the first string to be concatenated.
 //@param s2 The pointer to the second string to be concatenated.
+//@return The pointer to the allocated memory.
+*/
+
+char	*ft_strtrim(char const *s1, char const *set);
+/*
+//@brief Allocates (with malloc(3)) and returns a copy of s1 with the characters
+specified in set removed from the beginning and the end of the string.
+//@param s1 The pointer to the string to be copied.
+//@param set The pointer to the set of characters to be removed.
 //@return The pointer to the allocated memory.
 */
 
