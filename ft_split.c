@@ -3,73 +3,82 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:54:24 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/28 18:26:44 by lpin             ###   ########.fr       */
+/*   Updated: 2023/09/29 02:13:21 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_count_chr(char *s, int c)
+size_t	ft_null_strchr(char *s, int c)
 {
 	size_t	i;
 	size_t	s_len;
-	size_t	counter;
+	size_t	null_counter;
+	int		flag;
 
 	i = 0;
+	flag = 0;
 	s_len = ft_strlen(s);
-	counter = 0;
+	null_counter = 0;
 	while (i < s_len)
 	{
+		if (flag == 1 && s[i] != '\0')
+			++null_counter;
 		if (s[i] == (char)c)
-			++counter;
+			s[i] = '\0';
+		if (s[i] == '\0')
+			flag = 1;
+		else
+			flag = 0;
 		++i;
 	}
-	return (counter);
+	return (null_counter);
 }
 
-size_t	ft_memoffset(void const *s, int c, size_t len)
-{
-	size_t	offset;
-
-	offset = 0;
-	while (*(char *)s != c && len > 0)
-	{
-		++offset;
-		--len;
-		s++;
-	}
-	return (offset);
-}
-
-void	ft_split(char const *s, int c)
+char	**ft_split(char const *s, int c)
 {
 	char	*to_split;
-	char	*aux;
 	char	**splitted;
-	size_t	counter;
-	size_t	offset;
+	size_t	null_counter;
+	int		i;
 
+	i = 0;
 	to_split = (char *)s;
-	counter = ft_count_chr(to_split, c);
-	while ((counter + 1) != 0)
+	null_counter = ft_null_strchr(to_split, c);
+	splitted = (char **)ft_calloc(null_counter + 1, sizeof(char));
+	if (splitted == NULL)
+		return (NULL);
+	while ((null_counter + 1) != 0)
 	{
-		aux = ft_substr(to_split, 0, ft_strlen(to_split) + 1);
-		to_split = ft_strchr(to_split, c);
+		splitted[i] = (char *)ft_calloc(1, ft_strlen(to_split) + 1);
+		if (splitted[i] == NULL)
+			return (NULL);
+		splitted[i] = ft_substr(to_split, 0, ft_strlen(to_split) + 1);
+		if (splitted[i] != NULL)
+			++i;
+		to_split = ft_strchr(to_split, 0);
 		to_split++;
-		printf("El aux es: %s\n", aux);
-		//printf("El to_split es: %s\n", to_split);
-		--counter;
+		--null_counter;
 	}
+	return (splitted);
 }
 
-int	main(void)
+/*int	main(void)
 {
-	char	s[] = "hola mundo bla eco";
-	char	c = 'o';
+	char	s[] = "hoola  mundo bla eco";
+	char	c = ' ';
+	char	**splitted;
+	int		i;
 
-	ft_split(s, c);
+	i = 0;
+	splitted = ft_split(s, c);
+	while (splitted[i] != (void *)0)
+	{
+		printf("El substring contiene: %s\n", splitted[i]);
+		++i;
+	}
 	return (0);
-}
+}*/
