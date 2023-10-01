@@ -6,7 +6,7 @@
 /*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 16:13:12 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/29 02:12:46 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/01 17:52:41 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,25 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*ptr;
+	char	*ptr;
 
+	if (*s == '\0' || len == '0')
+		return (NULL);
 	while (start > 0)
 	{
 		s++;
 		--start;
 	}
-	if (start == 0)
-		ptr = ft_calloc(len + 1, sizeof(char));
-	else
-		ptr = ft_calloc((ft_strlen(s) + 1), sizeof(char));
+	ptr = ft_calloc((ft_strlen(s) + 1), sizeof(char));
 	if (ptr == NULL)
 		return (NULL);
 	ft_strlcpy(ptr, s, len + 1);
-	if (*ptr == '\0')
-		return (NULL);
 	return (ptr);
 }
-/*El último "if (*ptr == '\0')" es para evaluar que no retorne 
-un puntero vacío, de ser asi retorna nulo*/
 
 /*int	main(void)
 {
-	char	s1[] = "Argentina";
+	char	s1[] = "";
 	char	*ft_ptr;
 
 	ft_ptr = ft_substr(s1, 2, 5);

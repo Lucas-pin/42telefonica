@@ -6,69 +6,88 @@
 /*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:54:24 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/29 02:13:21 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/01 17:55:08 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+void	*ft_memory_destroyer(char **splitted, int memory_counter)
+{
+	int	i;
+
+	i = 0;
+	while (i < memory_counter)
+	{
+		free(splitted[i]);
+		++i;
+	}
+	free(splitted);
+	return (NULL);
+}
+
 size_t	ft_null_strchr(char *s, int c)
 {
 	size_t	i;
 	size_t	s_len;
-	size_t	null_counter;
+	size_t	substr_qty;
 	int		flag;
 
 	i = 0;
 	flag = 0;
 	s_len = ft_strlen(s);
-	null_counter = 0;
+	substr_qty = 0;
 	while (i < s_len)
 	{
-		if (flag == 1 && s[i] != '\0')
-			++null_counter;
 		if (s[i] == (char)c)
+		{
 			s[i] = '\0';
-		if (s[i] == '\0')
 			flag = 1;
-		else
+		}
+		else if (flag == 1 && s[i] != '\0')
+		{
+			++substr_qty;
 			flag = 0;
+		}
 		++i;
 	}
-	return (null_counter);
+	return (substr_qty + 1);
 }
 
-char	**ft_split(char const *s, int c)
+char	**ft_split(char const *s, char c)
 {
 	char	*to_split;
 	char	**splitted;
-	size_t	null_counter;
+	size_t	substr_qty;
 	int		i;
 
 	i = 0;
 	to_split = (char *)s;
-	null_counter = ft_null_strchr(to_split, c);
-	splitted = (char **)ft_calloc(null_counter + 1, sizeof(char));
+	substr_qty = ft_null_strchr(to_split, c);
+	splitted = (char **)ft_calloc(substr_qty + 1, sizeof(char));
 	if (splitted == NULL)
 		return (NULL);
-	while ((null_counter + 1) != 0)
+	while (i < substr_qty)
 	{
 		splitted[i] = (char *)ft_calloc(1, ft_strlen(to_split) + 1);
 		if (splitted[i] == NULL)
-			return (NULL);
+			return (ft_memory_destroyer(splitted, i));
 		splitted[i] = ft_substr(to_split, 0, ft_strlen(to_split) + 1);
-		if (splitted[i] != NULL)
-			++i;
+		if (splitted[i] == NULL)
+			return (ft_memory_destroyer(splitted, i));
 		to_split = ft_strchr(to_split, 0);
-		to_split++;
-		--null_counter;
+		while (*to_split == '\0')
+			to_split++;
+		++i;
 	}
 	return (splitted);
 }
-
-/*int	main(void)
+/*The ft_substr also can return a NULL, 
+because of that it's necessary to repeat the if statement*/
+/*
+int	main(void)
 {
-	char	s[] = "hoola  mundo bla eco";
+	char	s[] = "hoola     mundo   bla   eco    le   ";
 	char	c = ' ';
 	char	**splitted;
 	int		i;
@@ -81,4 +100,5 @@ char	**ft_split(char const *s, int c)
 		++i;
 	}
 	return (0);
-}*/
+}
+*/
