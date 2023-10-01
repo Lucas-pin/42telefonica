@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 12:10:50 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/28 14:11:16 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/01 16:29:13 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -266,6 +266,16 @@ char	*ft_strtrim(char const *s1, char const *set);
 specified in set removed from the beginning and the end of the string.
 //@param s1 The pointer to the string to be copied.
 //@param set The pointer to the set of characters to be removed.
+//@return The pointer to the allocated memory.
+*/
+
+char    **ft_split(char const *s, char c);
+/*
+//@brief Allocates (with malloc(3)) and returns an array of strings obtained by
+splitting ’s’ using the character ’c’ as a delimiter. The array must be ended
+by a NULL pointer.
+//@param s The pointer to the string to be splitted.
+//@param c The character to be used as delimiter.
 //@return The pointer to the allocated memory.
 */
 
