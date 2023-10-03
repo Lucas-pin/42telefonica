@@ -6,7 +6,7 @@
 /*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 12:10:50 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/01 16:29:13 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/03 20:09:33 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <ctype.h>
 # include <string.h>
 # include <stdlib.h>
+#include <unistd.h>
 
 int		ft_isalpha(int c);
 /*
@@ -276,6 +277,14 @@ splitting ’s’ using the character ’c’ as a delimiter. The array must be 
 by a NULL pointer.
 //@param s The pointer to the string to be splitted.
 //@param c The character to be used as delimiter.
+//@return The pointer to the allocated memory.
+*/
+
+char	*ft_itoa(int n);
+/*
+//@brief Allocates (with malloc(3)) and returns a string representing the integer
+received as an argument. Negative numbers must be handled.
+//@param n The integer to be converted.
 //@return The pointer to the allocated memory.
 */
 
