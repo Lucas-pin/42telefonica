@@ -6,7 +6,7 @@
 /*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 12:10:50 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/03 20:09:33 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/05 23:57:31 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -285,6 +285,15 @@ char	*ft_itoa(int n);
 //@brief Allocates (with malloc(3)) and returns a string representing the integer
 received as an argument. Negative numbers must be handled.
 //@param n The integer to be converted.
+//@return The pointer to the allocated memory.
+*/
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+/*
+//@brief Applies the function ’f’ to each character of the string ’s’ to create
+a new string (with malloc(3)) resulting from successive applications of ’f’.
+//@param s The pointer to the string to be modified.
+//@param f The pointer to the function to be applied.
 //@return The pointer to the allocated memory.
 */
 
