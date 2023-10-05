@@ -6,7 +6,7 @@
 /*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 12:10:50 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/05 23:57:31 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/06 00:55:18 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -295,6 +295,16 @@ a new string (with malloc(3)) resulting from successive applications of ’f’.
 //@param s The pointer to the string to be modified.
 //@param f The pointer to the function to be applied.
 //@return The pointer to the allocated memory.
+*/
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+/*
+//@brief Applies the function f to each character of the string passed as argument,
+and passing its index as first argument. Each character is passed by address
+to f to be modified if necessary.
+//@param s The pointer to the string to be modified.
+//@param f The pointer to the function to be applied.
+//@return None.
 */
 
 #endif
