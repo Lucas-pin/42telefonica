@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 22:48:29 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/24 23:04:00 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/06 19:27:50 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
 char	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -20,9 +20,9 @@ char	*ft_memchr(const void *s, int c, size_t n)
 	while (n > 0)
 	{
 		if (*(unsigned char *)s == (char)c)
-		    temp = (unsigned char *)s;
+			temp = (unsigned char *)s;
 		s++;
-        --n;
+		--n;
 	}
 	return (temp);
 }

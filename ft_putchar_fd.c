@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 17:48:30 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/06 19:24:52 by lpin             ###   ########.fr       */
+/*   Created: 2023/10/06 19:00:03 by lpin              #+#    #+#             */
+/*   Updated: 2023/10/06 19:24:11 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	return (0);
+	if (fd != -1)
+		write(fd, &c, 1);
 }
+
+/*#include <fcntl.h>
 
 int	main(void)
 {
-	int	a;
-	int	b;
+	int		fd;
+	char	c;
 
-	a = 'a';
-	b = '0';
-	printf("isalpha(%c) = %d\n", a, isalpha(a));
-	printf("ft_isalpha(%c) = %d\n", a, ft_isalpha(a));
-	printf("isalpha(%c) = %d\n", b, isalpha(b));
-	printf("ft_isalpha(%c) = %d\n", b, ft_isalpha(b));
-}
+	c = 'c';
+	fd = open("prueba_txt.txt", O_RDWR);
+	if (fd != -1)
+	{
+		ft_putchar_fd(c, fd);
+		printf("El fd es: %i", fd);
+		close(fd);
+	}
+	else
+		printf("Fallo la apertura");
+	return (0);
+}*/
+//En open utilizo el flag 'O_RDWR' para tener acceso de lectura y escritura

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 12:10:50 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/06 00:55:18 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/06 19:29:51 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <ctype.h>
 # include <string.h>
 # include <stdlib.h>
-#include <unistd.h>
+# include <unistd.h>
 
 int		ft_isalpha(int c);
 /*
@@ -270,7 +270,7 @@ specified in set removed from the beginning and the end of the string.
 //@return The pointer to the allocated memory.
 */
 
-char    **ft_split(char const *s, char c);
+char	**ft_split(char const *s, char c);
 /*
 //@brief Allocates (with malloc(3)) and returns an array of strings obtained by
 splitting ’s’ using the character ’c’ as a delimiter. The array must be ended
@@ -299,9 +299,9 @@ a new string (with malloc(3)) resulting from successive applications of ’f’.
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 /*
-//@brief Applies the function f to each character of the string passed as argument,
-and passing its index as first argument. Each character is passed by address
-to f to be modified if necessary.
+//@brief Applies the function f to each character of the string
+passed as argument,and passing its index as first argument. 
+Each character is passed by address to f to be modified if necessary.
 //@param s The pointer to the string to be modified.
 //@param f The pointer to the function to be applied.
 //@return None.
