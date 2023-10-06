@@ -6,7 +6,7 @@
 /*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:34:39 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/25 17:58:41 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/06 18:43:51 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_atoi(const char *str)
 
 	sign = 0;
 	minus = 0;
-	while (*str == 32)
+	while ((*str >= 9 && *str <= 13) || *str == 32)
 		str++;
 	while (*str == '+' || *str == '-')
 	{
