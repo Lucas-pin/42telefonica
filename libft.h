@@ -6,7 +6,7 @@
 /*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 12:10:50 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/06 19:29:51 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/07 19:59:58 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 int		ft_isalpha(int c);
 /*
@@ -304,6 +310,39 @@ passed as argument,and passing its index as first argument.
 Each character is passed by address to f to be modified if necessary.
 //@param s The pointer to the string to be modified.
 //@param f The pointer to the function to be applied.
+//@return None.
+*/
+
+void	ft_putchar_fd(char c, int fd);
+/*
+//@brief Outputs the character ’c’ to the given file descriptor.
+//@param c The character to output.
+//@param fd The file descriptor on which to write.
+//@return None.
+*/
+
+void	ft_putstr_fd(char *s, int fd);
+/*
+//@brief Outputs the string ’s’ to the given file descriptor.
+//@param s The string to output.
+//@param fd The file descriptor on which to write.
+//@return None.
+*/
+
+void	ft_putendl_fd(char *s, int fd);
+/*
+//@brief Outputs the string ’s’ to the given file descriptor, followed by a
+newline.
+//@param s The string to output.
+//@param fd The file descriptor on which to write.
+//@return None.
+*/
+
+void	ft_putnbr_fd(int n, int fd);
+/*
+//@brief Outputs the integer ’n’ to the given file descriptor.
+//@param n The integer to output.
+//@param fd The file descriptor on which to write.
 //@return None.
 */
 
