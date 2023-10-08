@@ -6,7 +6,7 @@
 /*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 12:10:50 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/07 21:03:23 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/08 20:27:03 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -344,6 +344,30 @@ void	ft_putnbr_fd(int n, int fd);
 //@param n The integer to output.
 //@param fd The file descriptor on which to write.
 //@return None.
+*/
+
+t_list	*ft_lstnew(void *content);
+/*
+//@brief Allocates (with malloc(3)) and returns a new element. The variable
+’content’ is initialized with the value of the parameter ’content’. The
+variable ’next’ is initialized to NULL.
+//@param content The content to be added to the new element.
+//@return The new element.
+*/
+
+void	ft_lstadd_front(t_list **lst, t_list *new);
+/*
+//@brief Adds the element ’new’ at the beginning of the list.
+//@param lst The address of a pointer to the first link of a list.
+//@param new The address of a pointer to the element to be added to the list.
+//@return None.
+*/
+
+int		ft_lstsize(t_list *lst);
+/*
+//@brief Counts the number of elements in a list.
+//@param lst The beginning of the list.
+//@return Length of the list.
 */
 
 #endif

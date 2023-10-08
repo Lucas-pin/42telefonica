@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 16:13:12 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/08 16:30:00 by lpin             ###   ########.fr       */
+/*   Created: 2023/10/08 16:18:09 by lpin              #+#    #+#             */
+/*   Updated: 2023/10/08 19:55:07 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_list	*ft_lstnew(void *content)
 {
-	char	*ptr;
+	t_list	*nodo;
 
-	if (*s == '\0' || len == '0')
+	nodo = malloc(sizeof(t_list));
+	if (nodo == NULL)
 		return (NULL);
-	while (start > 0)
-	{
-		s++;
-		--start;
-	}
-	ptr = ft_calloc((ft_strlen(s) + 1), sizeof(char));
-	if (ptr == NULL)
-		return (NULL);
-	ft_strlcpy(ptr, s, len + 1);
-	return (ptr);
+	nodo->content = content;
+	nodo->next = NULL;
+	return (nodo);
 }
 
 /*int	main(void)
 {
-	char	s1[] = "";
-	char	*ft_ptr;
+	t_list	*prueba;
+	char	c[] = "Hola";
 
-	ft_ptr = ft_substr(s1, 2, 5);
-	printf("ft_ptr contiene: %s\n", ft_ptr);
-	printf("La longitud de ft_ptr es: %zu\n", ft_strlen(ft_ptr));
-	return (0);
+	prueba = ft_lstnew(c);
+	printf("El content es: %s\n", prueba->content);
+	printf("El next es: %p\n", prueba->next);
+	free(prueba);
+	return(0);
 }*/
