@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 10:53:07 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/09 11:22:06 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/09 12:49:06 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,10 @@
 t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*node;
-	int		node_qty;
 
 	node = lst;
-	node_qty = ft_lstsize(node);
-	while (node_qty - 1 > 0)
-	{
+	while (node->next)
 		node = node->next;
-		--node_qty;
-	}
 	return (node);
 }
 
