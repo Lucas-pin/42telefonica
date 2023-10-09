@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 12:10:50 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/08 20:27:03 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/09 11:22:35 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -368,6 +368,13 @@ int		ft_lstsize(t_list *lst);
 //@brief Counts the number of elements in a list.
 //@param lst The beginning of the list.
 //@return Length of the list.
+*/
+
+t_list	*ft_lstlast(t_list *lst);
+/*
+//@brief Returns the last element of the list.
+//@param lst The beginning of the list.
+//@return The last element of the list.
 */
 
 #endif

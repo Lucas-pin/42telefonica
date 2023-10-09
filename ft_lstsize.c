@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 20:23:42 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/08 20:26:49 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/09 11:22:41 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 int	ft_lstsize(t_list *lst)
 {
 	int	i;
+	t_list	*nodo;
 
 	i = 0;
-	while (lst)
+	nodo = lst;
+	while (nodo)
 	{
-		lst = lst->next;
+		nodo = nodo->next;
 		i++;
 	}
 	return (i);
