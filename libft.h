@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 12:10:50 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/09 11:22:35 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/09 20:07:27 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -375,6 +375,34 @@ t_list	*ft_lstlast(t_list *lst);
 //@brief Returns the last element of the list.
 //@param lst The beginning of the list.
 //@return The last element of the list.
+*/
+
+void	ft_lstadd_back(t_list **lst, t_list *new);
+/*
+//@brief Adds the element ’new’ at the end of the list.
+//@param lst The address of a pointer to the first link of a list.
+//@param new The address of a pointer to the element to be added to the list.
+//@return None.
+*/
+
+void	ft_lstdelone(t_list *lst, void (*del)(void*));
+/*
+//@brief Takes as a parameter an element and frees the memory of the element’s
+content using the function ’del’ given as a parameter and free the element.
+The memory of ’next’ must not be freed.
+//@param lst The element to free.
+//@param del The address of the function used to delete the content.
+//@return None.
+*/
+
+void	ft_lstclear(t_list **lst, void (*del)(void*));
+/*
+//@brief Deletes and frees the given element and every successor of that element,
+using the function ’del’ and free(3). Finally, the pointer to the list must be
+set to NULL.
+//@param lst The address of a pointer to an element.
+//@param del The address of the function used to delete the content.
+//@return None.
 */
 
 #endif
