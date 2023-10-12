@@ -6,7 +6,7 @@
 /*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 17:45:15 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/03 20:08:43 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/10 13:38:33 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_itoa(int n)
 
 	n_aux = n;
 	len = ft_int_len(n);
-	ptr = calloc((len + 1), sizeof(char));
+	ptr = ft_calloc((len + 1), sizeof(char));
 	if (ptr == NULL)
 		return (NULL);
 	if (n < 0)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 13:42:06 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/22 17:32:06 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/10 13:13:48 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	return (temp);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	size_t	n;
 	char	src[] = "Argentina";
@@ -49,4 +49,4 @@ int	main(void)
 	//printf("Contenido dest_1 %s\n", dest_1);
 	//printf("direccion ft_memcpy (pointer_2) = %p\n", pointer);
 	//printf("direccion memcpy (pointer_3) = %p\n", pointer_1);
-}
+}*/

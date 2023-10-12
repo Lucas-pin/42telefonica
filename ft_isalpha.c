@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 17:48:30 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/06 19:24:52 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/10 13:37:07 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_isalpha(int c)
 	return (0);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	int	a;
 	int	b;
@@ -30,4 +30,4 @@ int	main(void)
 	printf("ft_isalpha(%c) = %d\n", a, ft_isalpha(a));
 	printf("isalpha(%c) = %d\n", b, isalpha(b));
 	printf("ft_isalpha(%c) = %d\n", b, ft_isalpha(b));
-}
+}*/

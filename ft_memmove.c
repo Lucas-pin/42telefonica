@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 13:18:47 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/22 17:32:10 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/10 13:33:42 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	return (dest_char);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	src[] = "Argentina";
 	char	src_1[] = "Argentina";
@@ -59,4 +59,4 @@ int	main(void)
 	printf("El puntero de prueba_memcpy contiene: %s\n", prueba_memcpy);
 	printf("El src_2 contiene: %s\n", src_2);
 	return (0);
-}
+}*/
