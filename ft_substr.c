@@ -6,7 +6,7 @@
 /*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 16:13:12 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/08 16:30:00 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/12 18:37:48 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,21 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (*s == '\0' || len == '0')
 		return (NULL);
-	while (start > 0)
+	while (start > 0 && *s)
 	{
 		s++;
 		--start;
 	}
-	ptr = ft_calloc((ft_strlen(s) + 1), sizeof(char));
+	ptr = ft_calloc((len + 1), sizeof(char));
 	if (ptr == NULL)
 		return (NULL);
 	ft_strlcpy(ptr, s, len + 1);
 	return (ptr);
 }
 
-/*int	main(void)
+/*
+if (*s == '\0' || len == '0'
+int	main(void)
 {
 	char	s1[] = "";
 	char	*ft_ptr;

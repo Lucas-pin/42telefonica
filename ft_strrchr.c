@@ -6,7 +6,7 @@
 /*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 21:45:32 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/28 18:29:56 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/12 16:51:59 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strrchr(const char *s, int c)
 			temp = (char *)s;
 		s++;
 	}
+	if (*s == (char)c)
+			temp = (char *)s;
 	return (temp);
 }
 

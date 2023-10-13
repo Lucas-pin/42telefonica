@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 13:42:06 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/12 13:41:51 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/13 13:26:53 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	void	*temp;
 
 	temp = dst;
+	if (!dst && !src)
+		return (temp);
 	while (n > 0)
 	{
 		*(char *)dst = *(char *)src;

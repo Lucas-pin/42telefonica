@@ -6,7 +6,7 @@
 /*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 22:12:52 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/25 12:06:05 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/12 18:10:40 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,21 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	while (n > 0 && *s1 && *s2)
+	unsigned char	*s1_aux;
+	unsigned char	*s2_aux;
+
+	s1_aux = (unsigned char *)s1;
+	s2_aux = (unsigned char *)s2;
+	while (n > 0 && *s1_aux && *s2_aux)
 	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
+		if (*s1_aux != *s2_aux)
+			return (*s1_aux - *s2_aux);
 		--n;
-		s1++;
-		s2++;
+		s1_aux++;
+		s2_aux++;
 	}
 	if (n != 0)
-		return (*s1 - *s2);
+		return (*s1_aux - *s2_aux);
 	return (0);
 }
 
