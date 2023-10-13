@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:54:24 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/12 13:41:59 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/13 18:36:52 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,41 +64,37 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	to_split = (char *)s;
 	substr_qty = ft_null_strchr(to_split, c);
-	splitted = (char **)ft_calloc(substr_qty + 1, sizeof(char));
+	splitted = (char **)ft_calloc(substr_qty + 1, sizeof(char *));
 	if (splitted == NULL)
 		return (NULL);
 	while (i < substr_qty)
 	{
-		splitted[i] = (char *)ft_calloc(1, ft_strlen(to_split) + 1);
-		if (splitted[i] == NULL)
-			return (ft_memory_destroyer(splitted, i));
-		splitted[i] = ft_substr(to_split, 0, ft_strlen(to_split) + 1);
+		splitted[i] = ft_substr(to_split, 0, ft_strlen(to_split));
 		if (splitted[i] == NULL)
 			return (ft_memory_destroyer(splitted, i));
 		to_split = ft_strchr(to_split, 0);
 		while (*to_split == '\0')
 			to_split++;
-		++i;
+		i++;
 	}
 	return (splitted);
 }
 /*The ft_substr also can return a NULL, 
 because of that it's necessary to repeat the if statement*/
-/*
-int	main(void)
+/*int	main(void)
 {
-	char	s[] = "hoola     mundo   bla   eco    le   ";
+	char	s[] = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non 
+	risus. Suspendisse";
 	char	c = ' ';
 	char	**splitted;
 	int		i;
 
 	i = 0;
 	splitted = ft_split(s, c);
-	while (splitted[i] != (void *)0)
+	while (i < 12)
 	{
-		printf("El substring contiene: %s\n", splitted[i]);
-		++i;
+		printf("splitted[%d]: %s\n", i, splitted[i]);
+		i++;
 	}
 	return (0);
-}
-*/
+}*/

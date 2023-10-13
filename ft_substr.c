@@ -6,7 +6,7 @@
 /*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 16:13:12 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/12 18:37:48 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/13 18:35:10 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*ptr;
 
-	if (*s == '\0' || len == '0')
+	if (*s == '\0')
 		return (NULL);
 	while (start > 0 && *s)
 	{
@@ -26,7 +26,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ptr = ft_calloc((len + 1), sizeof(char));
 	if (ptr == NULL)
 		return (NULL);
-	ft_strlcpy(ptr, s, len + 1);
+	if (len == 0)
+		return (ptr);
+	else
+		ft_strlcpy(ptr, s, len + 1);
 	return (ptr);
 }
 
