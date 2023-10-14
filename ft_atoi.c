@@ -3,18 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:34:39 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/12 18:01:02 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/14 18:19:36 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_move_spaces(char *str)
 {
-	int	ret;
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
+	while (*str == '+' || *str == '-')
+		str++;
+	return (str);
+}
+
+int	ft_check_sign(char *str)
+{
 	int	sign;
 	int	minus;
 
@@ -25,25 +33,42 @@ int	ft_atoi(const char *str)
 	while (*str == '+' || *str == '-')
 	{
 		if (*str == '-')
-			minus++;
+			++minus;
 		++sign;
 		str++;
 	}
 	if (sign > 1)
-		return (0);
-	while ((*str >= '0' && *str <= '9') && *str != '\0')
+		return (1);
+	else if (minus == 1)
+		return (2);
+	return (0);
+}
+
+int	ft_atoi(const char *str)
+{
+	char	*str_aux;
+	int		nbr;
+	int		sign;
+
+	nbr = 0;
+	str_aux = (char *)str;
+	sign = ft_check_sign(str_aux);
+	str_aux = ft_move_spaces(str_aux);
+	while ((*str_aux >= '0' && *str_aux <= '9') && *str_aux != '\0')
 	{
-		ret = ret * 10 + (*str - '0');
-		str++;
+		nbr = nbr * 10 + (*str_aux - '0');
+		str_aux++;
 	}
-	if (minus != 0)
-		return (-ret);
-	return (ret);
+	if (sign == 1)
+		return (0);
+	else if (sign == 2)
+		return (-nbr);
+	return (nbr);
 }
 
 /*int	main(void)
 {
-	char	src_1[] = "835";
+	char	src_1[] = "\t\v\f\r\n \f-06050";
 	int		ret;
 	int		ft_ret;
 
