@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 17:21:47 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/13 16:33:39 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/14 17:14:28 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		len = (j - i) + 1;
 		new = ft_substr(s1_aux, (unsigned int)i, len);
-	}	
+	}
 	return (new);
 }
 

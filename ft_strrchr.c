@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 21:45:32 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/12 16:51:59 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/14 17:14:26 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strrchr(const char *s, int c)
 		s++;
 	}
 	if (*s == (char)c)
-			temp = (char *)s;
+		temp = (char *)s;
 	return (temp);
 }
 
