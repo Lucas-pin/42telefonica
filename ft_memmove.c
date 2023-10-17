@@ -6,7 +6,7 @@
 /*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 13:18:47 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/14 17:17:31 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/14 19:00:37 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char	*dst_char;
 	char	*src_char;
-	size_t	i;
 
 	dst_char = (char *)dst;
 	src_char = (char *)src;
-	i = 0;
-	if (dst_char > src_char)
+	if (dst_char > src_char && dst_char != NULL && src_char != NULL)
 	{
 		while (len > 0)
 		{
@@ -30,13 +28,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		}
 	}
 	else
-	{
-		while (i < len)
-		{
-			dst_char[i] = src_char[i];
-			++i;
-		}
-	}
+		ft_memcpy(dst_char, src_char, len);
 	return (dst_char);
 }
 

@@ -6,7 +6,7 @@
 /*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 17:21:47 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/14 17:14:28 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/14 20:50:43 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	j = ft_strlen(s1);
 	s1_aux = (char *)s1;
+	if (*s1_aux == '\0')
+		return (ft_strdup(""));
 	while (ft_strchr(set, s1_aux[i]))
 		++i;
 	while (ft_strrchr(set, s1_aux[j]) && j > 0)
@@ -39,11 +41,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 /*int	main(void)
 {
-	char	s1[] = "         ";
-	char	s2[] = " ";
+	char	s1[] = "";
+	char	s2[] = "";
 	char	*ptr;
 
 	ptr = ft_strtrim(s1, s2);
 	printf("El puntero contiene: %s\n", ptr);
+	printf("El puntero apunta a: %p\n", ptr);
 	return (0);
 }*/
