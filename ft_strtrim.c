@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 17:21:47 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/14 20:50:43 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/19 18:11:45 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		++i;
 	while (ft_strrchr(set, s1_aux[j]) && j > 0)
 		--j;
-	if (i >= j || !s1 || !set)
+	if (i > j || !s1 || !set)
 		new = ft_calloc(1, sizeof(char));
 	else
 	{
@@ -41,8 +41,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 /*int	main(void)
 {
-	char	s1[] = "";
-	char	s2[] = "";
+	char	s1[] = "abcdba";
+	char	s2[] = "acb";
 	char	*ptr;
 
 	ptr = ft_strtrim(s1, s2);
