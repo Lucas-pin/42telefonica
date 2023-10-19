@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+         #
+#    By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/10 11:22:27 by lpin              #+#    #+#              #
-#    Updated: 2023/10/14 18:34:23 by lpin             ###   ########.fr        #
+#    Updated: 2023/10/19 18:34:00 by lpin             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,12 +50,11 @@ $(NAME): $(OBJS) $(HEADER)
 #.PHONY: indica que clean, fclean y re no son archivos
 #que se van a crear, sino que son acciones
 
-#bonus: $(BONUS_OBJS) $(HEADER)
+bonus: $(BONUS_OBJS) $(HEADER)
 	ar rcs $(NAME) $(BONUS_OBJS)
 
 clean:
-	$(RM) $(OBJS) 
-#$(BONUS_OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
