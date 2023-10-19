@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:54:24 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/14 20:13:19 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/19 18:40:42 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ size_t	ft_strqty(char *s, int c)
 	flag = 0;
 	s_len = ft_strlen(s);
 	substr_qty = 0;
+	if (s_len == 0)
+		return (substr_qty);
 	while (i < s_len)
 	{
 		if (s[i] == (char)c)
@@ -93,8 +95,8 @@ char	**ft_split(char const *s, char c)
 because of that it's necessary to repeat the if statement*/
 /*int	main(void)
 {
-	char	s[] = "                  olol";
-	char	c = ' ';
+	char	s[] = "";
+	char	c = 'c';
 	char	**splitted;
 	int		i;
 
