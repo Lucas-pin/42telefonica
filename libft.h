@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 12:10:50 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/09 20:07:27 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/26 17:44:13 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -403,6 +403,27 @@ set to NULL.
 //@param lst The address of a pointer to an element.
 //@param del The address of the function used to delete the content.
 //@return None.
+*/
+
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+/*
+//@brief Iterates the list ’lst’ and applies the function ’f’ to the content of
+each element.
+//@param lst The address of a pointer to an element.
+//@param f The address of the function used to iterate on the list.
+//@return None.
+*/
+
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+/*
+//@brief Iterates the list ’lst’ and applies the function ’f’ to the content of
+each element. Creates a new list resulting of the successive applications of
+the function ’f’. The ’del’ function is used to delete the content of an
+element if needed.
+//@param lst The address of a pointer to an element.
+//@param f The address of the function used to iterate on the list.
+//@param del The address of the function used to delete the content.
+//@return The new list. NULL if the allocation fails.
 */
 
 #endif
