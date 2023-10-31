@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:34:39 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/14 18:19:36 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/31 13:46:10 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_move_spaces(char *str)
+static char	*ft_move_spaces(char *str)
 {
 	while ((*str >= 9 && *str <= 13) || *str == 32)
 		str++;
@@ -21,7 +21,7 @@ char	*ft_move_spaces(char *str)
 	return (str);
 }
 
-int	ft_check_sign(char *str)
+static int	ft_check_sign(char *str)
 {
 	int	sign;
 	int	minus;

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 16:13:12 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/17 11:54:51 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/31 13:49:06 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_check_errors(char const *s, unsigned int start, size_t len)
+static int	ft_check_errors(char const *s, unsigned int start, size_t len)
 {
 	if (!s)
 		return (1);

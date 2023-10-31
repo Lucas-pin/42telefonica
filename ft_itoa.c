@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 17:45:15 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/12 13:41:37 by lpin             ###   ########.fr       */
+/*   Updated: 2023/10/31 13:47:44 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_int_len(int n)
+static size_t	ft_int_len(int n)
 {
 	size_t	len;
 
@@ -27,7 +27,7 @@ size_t	ft_int_len(int n)
 	return (len);
 }
 
-void	ft_save_nbr(char *ptr, long long_n, size_t len)
+static void	ft_save_nbr(char *ptr, long long_n, size_t len)
 {
 	if (long_n == 0)
 		ptr[len - 1] = '0';
