@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin_free_s1.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpin <lpin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 15:25:43 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/22 17:30:24 by lpin             ###   ########.fr       */
+/*   Created: 2024/09/02 18:49:11 by lpin              #+#    #+#             */
+/*   Updated: 2024/09/26 21:39:13 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+char	*ft_strjoin_free_s1(char *s1, char const *s2)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
-		|| (c >= '0' && c <= '9'))
-		return (1);
-	return (0);
+	size_t	size_s1;
+	size_t	size_s2;
+	size_t	total_size;
+	char	*ptr;
+
+	size_s1 = ft_strlen(s1);
+	size_s2 = ft_strlen(s2);
+	total_size = size_s1 + size_s2 + 1;
+	ptr = ft_calloc(total_size, sizeof(char));
+	if (ptr == NULL)
+		return (NULL);
+	ft_strlcat(ptr, s1, total_size);
+	ft_strlcat(ptr, s2, total_size);
+	ft_destroyer(&s1);
+	s1 = NULL;
+	return (ptr);
 }
-
-/*int	main(void)
-{
-	char	a;
-	char	b;
-
-	a = 'a';
-	b = '%';
-	printf("isalnum(%c) = %d\n", a, isalnum(a));
-	printf("ft_isalnum(%c) = %d\n", a, ft_isalnum(a));
-	printf("isalnum(%c) = %d\n", b, isalnum(b));
-	printf("ft_isalnum(%c) = %d\n", b, ft_isalnum(b));
-}*/

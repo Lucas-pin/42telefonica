@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin <lpin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 12:10:50 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/26 17:44:13 by lpin             ###   ########.fr       */
+/*   Updated: 2024/09/26 22:47:24 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "get_next_line.h"
 
 typedef struct s_list
 {
@@ -424,6 +425,44 @@ element if needed.
 //@param f The address of the function used to iterate on the list.
 //@param del The address of the function used to delete the content.
 //@return The new list. NULL if the allocation fails.
+*/
+
+void	*ft_destroyer(char **to_destroy);
+/*
+@brief Frees a 2D pointer array if it is not NULL.
+@param to_destroy The pointer to the 2D array to be freed.
+@return NULL.
+*/
+
+char	*ft_strjoin_free_s2(char const *s1, char *s2);
+/*
+@brief Allocates (with malloc(3)) and returns a new string, which is the result
+of the concatenation of s1 and s2. ALso frees the second string.
+@param s1 The pointer to the first string to be concatenated.
+@param s2 The pointer to the second string to be concatenated.
+@return The pointer to the allocated memory.
+NOTE: The second string has to be an allocated memory.
+*/
+
+char	*ft_strjoin_free_s1(char *s1, char const *s2);
+/*
+@brief Allocates (with malloc(3)) and returns a new string, which is the result
+of the concatenation of s1 and s2. ALso frees the first string.
+@param s1 The pointer to the first string to be concatenated.
+@param s2 The pointer to the second string to be concatenated.
+@return The pointer to the allocated memory.
+NOTE: The first string has to be an allocated memory.
+*/
+
+void	*ft_split_destroyer(char **split);
+/*
+@brief Frees a 2D pointer array if it is not NULL.
+@param split The pointer to the 2D array to be freed.
+@return NULL.
+*/
+
+void	ft_del(void *s);
+/*
 */
 
 #endif

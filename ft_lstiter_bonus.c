@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin < lpin@student.42malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin <lpin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 09:52:20 by lpin              #+#    #+#             */
-/*   Updated: 2023/10/10 11:14:52 by lpin             ###   ########.fr       */
+/*   Updated: 2024/09/03 18:00:04 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ int	main(void)
 	printf("La direccion de la lista completa es: %p\n", lst);
 	while (lst)
 	{
-		printf("El contenido de la lista completa es: %s\n", (char *)lst->content);
+		printf("El contenido de la lista 
+		completa es: %s\n", (char *)lst->content);
 		lst = lst->next;
 	}
 	return (0);

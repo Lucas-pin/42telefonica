@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_destroyer.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpin <lpin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 15:25:43 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/22 17:30:24 by lpin             ###   ########.fr       */
+/*   Created: 2024/06/16 17:57:22 by lpin              #+#    #+#             */
+/*   Updated: 2024/09/03 17:37:36 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	*ft_destroyer(char **to_destroy)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
-		|| (c >= '0' && c <= '9'))
-		return (1);
-	return (0);
+	char	*temp;
+
+	temp = *to_destroy;
+	if (!temp)
+		return (NULL);
+	while (*temp)
+	{
+		*temp = '\0';
+		temp++;
+	}
+	free(*to_destroy);
+	*to_destroy = NULL;
+	return (NULL);
 }
-
-/*int	main(void)
-{
-	char	a;
-	char	b;
-
-	a = 'a';
-	b = '%';
-	printf("isalnum(%c) = %d\n", a, isalnum(a));
-	printf("ft_isalnum(%c) = %d\n", a, ft_isalnum(a));
-	printf("isalnum(%c) = %d\n", b, isalnum(b));
-	printf("ft_isalnum(%c) = %d\n", b, ft_isalnum(b));
-}*/

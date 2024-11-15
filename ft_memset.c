@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpin <lpin@student.42.malaga.com>          +#+  +:+       +#+        */
+/*   By: lpin <lpin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 19:49:15 by lpin              #+#    #+#             */
-/*   Updated: 2023/09/26 13:19:33 by lpin             ###   ########.fr       */
+/*   Updated: 2024/09/04 20:54:17 by lpin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memset(void *b, int c, size_t len)
 	void	*temp;
 
 	temp = b;
+	if (!b)
+		return (b);
 	while (len > 0)
 	{
 		*(unsigned char *)b = (unsigned char) c;
